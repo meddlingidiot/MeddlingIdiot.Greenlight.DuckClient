@@ -19,3 +19,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+--------------------------------------------------------------------------------
+
+EXCLUSION: THE MEDDLINGIDIOT LOGO IS NOT COVERED BY THIS LICENSE
+
+The permission above applies to the source code only. It does NOT extend to the
+MeddlingIdiot mascot icon, which is distributed in this repository solely so that
+the application runs out of the box:
+
+  Greenlight.DuckClient/Assets/MeddlingIdiot.ico
+
+That file is Copyright (c) 2026 meddlingidiot. All rights reserved. It is not
+licensed under the MIT License or any other open licence, and may not be copied,
+shared, redistributed, modified or used in any other work - including forks and
+derivatives of this Software - without prior written permission. See
+TRADEMARKS.md and Greenlight.DuckClient/Assets/LICENSE.

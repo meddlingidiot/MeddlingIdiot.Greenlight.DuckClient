@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    A reference consumer of MeddlingIdiot.Greenlight.Sdk: the rubber duck off the Meddling
+    Idiot badge, sitting on the desktop. He is green while everything passes, yellow while a
+    pull request wants you, and red when a pipeline breaks - and every time that changes he
+    quacks, in a speech balloon rather than out loud, because a desk toy that made a noise
+    would be uninstalled by lunchtime. A build under way makes him breathe.
+
+    The point of it is what it does NOT have. No Azure DevOps client, no GitHub client, no
+    token, no polling loop - it reads everything from the Greenlight already running on the
+    machine, through the package. Everything here is either Avalonia drawing, the tray icon,
+    or the twenty-odd lines that talk to the SDK.
+
+    It references the SDK as a package, which is all an app of your own has to do:
+      dotnet add package MeddlingIdiot.Greenlight.Sdk
+
+    net10.0-windows because the click-through overlay and the work-area maths are Win32. The
+    SDK itself is plain net8.0/net10.0.
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Greenlight.DuckClient</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\MeddlingIdiot.ico</ApplicationIcon>
+    <!-- Not a package. Fallout's Package target packs the whole solution. -->
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="12.1.1" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.1.1" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.1" />
+  </ItemGroup>
+
+  <!-- The SDK and the updater, the same way your own app would take them. -->
+  <ItemGroup>
+    <PackageReference Include="MeddlingIdiot.Greenlight.Sdk" Version="1.2.0" />
+    <PackageReference Include="MeddlingIdiot.Velopack" Version="1.2.0" />
+  </ItemGroup>
+
+  <!--
+    The mascot, for the tray icon and the executable. Same icon the other apps use, and like
+    theirs NOT under the MIT licence - see TRADEMARKS.md. The licence notice beside it is for
+    people, not for the app.
+  -->
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" Exclude="Assets\LICENSE" />
+  </ItemGroup>
+</Project>
